@@ -229,7 +229,7 @@ export function validateWorkflowDAG(
   };
 }
 
-function detectCycle(nodes: WorkflowNode[], edges: WorkflowEdge[]): boolean {
+export function detectCycle(nodes: WorkflowNode[], edges: WorkflowEdge[]): boolean {
   const adjacency = buildAdjacencyList(nodes, edges);
   const visited = new Set<string>();
   const recursionStack = new Set<string>();
@@ -265,7 +265,7 @@ function detectCycle(nodes: WorkflowNode[], edges: WorkflowEdge[]): boolean {
   return false;
 }
 
-function buildAdjacencyList(
+export function buildAdjacencyList(
   nodes: WorkflowNode[],
   edges: WorkflowEdge[]
 ): Map<string, string[]> {
